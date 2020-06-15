@@ -1,6 +1,9 @@
 # CSV files
 *.csv
 
+# Files from Data source
+**/nflscrapR-data/*
+
 # History files
 .Rhistory
 .Rapp.history
