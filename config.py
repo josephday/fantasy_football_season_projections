@@ -19,6 +19,12 @@ MIN_YR = 2009
 MAX_YR = 2019
 MAX_WEEK = 16
 
+TEAM_ABBR_RENAME = {'SD': 'LAC',
+                   'LA': 'LAR',
+                   'STL': 'LAR',
+                   'OAK': 'LV',
+                   'JAC': 'JAX'}
+
 NEEDED_COLUMNS = ['play_id',
                   'game_id',
                   'game_date',
@@ -45,6 +51,3 @@ NEEDED_COLUMNS = ['play_id',
                   'receiver_player_name', 
                   'rusher_player_id',
                   'rusher_player_name']
-# -
-
-

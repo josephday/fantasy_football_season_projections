@@ -16,9 +16,9 @@
 import pandas as pd
 import numpy as np
 import sys
-sys.path.append('/Users/joeday/Documents/Fantasy/')
+sys.path.append('/Users/joeday/Documents/Fantasy/fantasy_football_season_projections')
 
-from config import INPUT_DATA_LOC, OUTPUT_DATA_LOC, MIN_YR, MAX_YR
+from config import INPUT_DATA_LOC, OUTPUT_DATA_LOC, MIN_YR, MAX_YR, TEAM_ABBR_RENAME
 
 def create_roster_map():
     
@@ -35,6 +35,8 @@ def create_roster_map():
                                     rosters[['season', 'gsis_id', 'team']]])
             
     roster_map.rename({'gsis_id':'player_id'}, axis=1, inplace=True)
+    
+    roster_map['team'] = roster_map['team'].map(TEAM_ABBR_RENAME).fillna(roster_map['team'])
     
     roster_map.to_csv(OUTPUT_DATA_LOC + 'roster_map.csv', index=False)
     
